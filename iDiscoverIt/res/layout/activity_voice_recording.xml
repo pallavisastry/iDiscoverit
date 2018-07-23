@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recorderLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+	    
+	<Button 
+       	android:id="@+id/uploadBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/upload"
+        android:drawableTop="@drawable/upload_icon_layer_list"
+        android:text="@string/fileUpload"/>
+	<TextView
+	    android:id="@+id/record_timer"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/record_time_title"
+	    android:layout_centerHorizontal="true"
+	   	android:textSize="20sp"
+	   	android:textStyle="bold"/>
+
+	<TextView
+	    android:id="@+id/record_time_title"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/uploadBtn"
+	    android:layout_centerHorizontal="true"
+	    android:text="@string/record_time"
+	    android:textSize="20sp"
+	    android:textStyle="bold" />
+
+	<ToggleButton
+	    android:id="@+id/rec"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_centerHorizontal="true"
+	    android:background="@drawable/toggle_rec_button" 
+	    android:textOn="Stop"
+	    android:textStyle="bold"
+	    android:textOff="Record"/>
+
+</RelativeLayout>

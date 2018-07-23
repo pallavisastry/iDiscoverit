@@ -1,0 +1,177 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4a4a4a" >
+
+    <!-- Player Header -->
+
+    <LinearLayout
+        android:id="@+id/player_header_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentTop="true"
+        android:background="@layout/bg_player_header"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" >
+
+		<!-- Image button to add a tag to media-->
+        <ImageButton
+            android:id="@+id/tag"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/tagButton"
+            android:src="@drawable/add_tag" />
+        
+        <!-- Toggle button to flag media-->
+            <ToggleButton
+                android:id="@+id/flag"
+                android:layout_width="44dp"
+                android:layout_height="33dp"
+                android:background="@drawable/toggle_flag" 
+                android:textOn=""
+                android:textOff=""/>
+		
+		<!-- Audiotron Title -->
+            <TextView
+                android:id="@+id/audiotronTitle"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:paddingLeft="10dp"
+                android:text="@string/audioTitle"
+                android:textColor="#04b3d2"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        <!--#new Toggle button to add to favorites -->
+        <ToggleButton
+            android:id="@+id/favorites"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_add_to_favorites"
+            android:textOff=""
+            android:textOn=""/>
+        
+         <!--#new Toggle button to flag -->
+       
+    </LinearLayout>
+    <!-- Audiotron Thumbnail Image -->
+
+    <LinearLayout
+        android:id="@+id/audiotronThumbnail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/player_header_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/adele" 
+            android:contentDescription="@string/android_image"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/timerDisplay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" >
+
+        <!-- Current Duration Label -->
+        <!-- Total Duration Label -->
+    </LinearLayout>
+
+   <!--  <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/timerDisplay"
+        android:gravity="center" >
+       
+    </LinearLayout> -->
+
+    <LinearLayout
+        android:id="@+id/player_footer_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="40dp"
+        android:background="@layout/bg_player_footer"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@layout/rounded_corner"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <ImageButton
+                android:id="@+id/btnBackward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/btn_backward" 
+                android:contentDescription="@string/back_btn"/>
+
+            <ImageButton
+                android:id="@+id/btnPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/btn_play" 
+                android:contentDescription="@string/play_btn"/>
+
+            <ImageButton
+                android:id="@+id/btnForward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/btn_forward" 
+                android:contentDescription="@string/forward_btn"/>
+            
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/audiotronTotalDurationLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/player_footer_bg"
+        android:layout_centerHorizontal="true"
+        android:gravity="right"
+        android:textColor="#04cbde"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/audiotronCurrentDurationLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/audiotronTotalDurationLabel"
+        android:gravity="left"
+        android:textColor="#eeeeee"
+        android:textStyle="normal" />
+
+    <SeekBar
+        android:id="@+id/audiotronProgressBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/timerDisplay"
+        android:layout_alignTop="@+id/audiotronCurrentDurationLabel"
+        android:paddingRight="6dp"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seek_handler" />
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ServerSideHelpers" basedir="." default="init">
+    
+	<target name='init'>
+		<property name='resources.dir' value='${basedir}/resources' />
+		<property name='build.dir' value='${basedir}/build' />
+		<property name='classes.dir' value='${build.dir}/classes' />
+		<property name='src.dir' value='${basedir}/src' />
+		<!-- Change the tomcat.home based on your path and version -->
+		<property name='tomcat.home' value='/Users/pallavi/Library/Tomcat/apache-tomcat-6.0.35' />
+		<property name='deploy.dir' value='${tomcat.home}/webapps' />
+		<property name='app' value='${ant.project.name}.war' />
+
+		<path id='classpath'>
+			<pathelement location='${basedir}/classes' />
+			<fileset dir="${tomcat.home}/lib">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir='${basedir}/WebContent/WEB-INF/lib'>
+				<include name='**/*.jar' />
+			</fileset>
+		</path>
+	</target>
+	
+	<target name='clean' depends='init'>
+		<delete dir='${build.dir}' />
+		<mkdir dir='${classes.dir}' />
+		<delete file="${basedir}/${app}" />
+	</target>
+	
+	<target name="compile" depends="clean" description="Compiles the Task">
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+			<classpath refid="classpath" />
+			<exclude name="com/sjsu/cmpe295B/idiscoverit/main/CategoryListDisplayActionTest.java" />
+			<exclude name="com/sjsu/cmpe295B/idiscoverit/main/RenderAudiotronsActionTest.java" />
+			<exclude name="com/sjsu/cmpe295B/idiscoverit/persistence/IdiscoveritDAOHandlerTest.java" />
+		</javac>
+		<copy todir="${classes.dir}">
+		    <fileset dir="${basedir}/src">
+			    <include name="**/*.xml" />
+			    <include name="log4j.properties" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="deploy" description="WARs the Task" depends="compile">
+		<copy todir="${build.dir}">
+			<fileset dir="${basedir}/WebContent">
+			    <include name="**/*.js*" />
+				<include name="WEB-INF/**" />
+			</fileset>
+		</copy>
+		<move todir="${build.dir}/WEB-INF/classes">
+			<fileset dir="${classes.dir}" />
+		</move>
+		<jar destfile="${basedir}/${app}">
+			<metainf dir="${basedir}/WebContent/META-INF" />
+			<fileset dir="${build.dir}" />
+		</jar>
+		<copy todir="${deploy.dir}" file="${basedir}/${app}" />
+	</target>
+
+</project>

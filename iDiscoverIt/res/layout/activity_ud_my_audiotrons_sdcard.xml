@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UD_MyAudiotrons_SDcardActivity" >
+
+	<ImageButton
+	    android:id="@+id/upload_sd_files"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/ic_action_cloud_btn"
+	    android:contentDescription="@string/upload"/>
+	
+	<ListView
+	    android:id="@+id/my_audiotrons_list"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"> 
+	</ListView>
+
+	 <!-- <TextView  
+        android:id="@+id/my_audiotron_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dip"
+        android:layout_marginTop="29dip"
+        android:gravity="left"
+        android:textColor="#04b3d2"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+   
+	 <CheckBox android:id="@+id/CheckBox01" 
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:padding="10dp"
+	    android:layout_marginRight="6sp"
+	    android:gravity="right"
+	    android:focusable="false">
+	  </CheckBox> -->
+  
+</LinearLayout>

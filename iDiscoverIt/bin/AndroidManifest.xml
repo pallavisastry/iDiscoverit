@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sjsu.cmpe295B.idiscoverit.main"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <application
+        android:icon="@drawable/idiscoverit_cover"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:launchMode="singleTask" >
+            <!--
+      		singleTask implies that a new instance is not created.
+      		Activity is brought to front only            -->
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.sjsu.cmpe295B.idiscoverit.main.SearchActivity" />
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.VoiceRecordingActivity"
+            android:label="@string/title_activity_voice_recording"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity android:name="com.sjsu.cmpe295B.idiscoverit.main.BaseActivity" />
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.webHelpers.UploadAudiotronActivity"
+            android:label="@string/title_activity_file_upload_to_cloud" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.AudiotronPlayerActivity"
+            android:label="@string/title_activity_audiotron_player" >
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.CategoryListDisplayActivity"
+            android:label="@string/title_activity_category_list_display" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.webHelpers.StreamAudiotronsActivity"
+            android:label="@string/title_activity_stream_audiotrons" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.AudiotronsInCategoryDisplayActivity"
+            android:label="@string/title_activity_audiotrons_in_category_display" >
+        </activity>
+        <!-- The activity below creates/handles network setting prefs for user -->
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.UserDetailsActivity"
+            android:label="@string/title_activity_user_profile" >
+
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.UD_ProfileActivity"
+            android:label="@string/title_activity_profile" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.UD_MyAuditronsAcitivity"
+            android:label="@string/title_activity_ud__my_auditrons_acitivity" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.UD_MyFavoritesActivity"
+            android:label="@string/title_activity_ud__my_favorites" >
+        </activity>
+
+        <service android:name="com.sjsu.cmpe295B.idiscoverit.webHelpers.UploadAudiotronsService" >
+        </service>
+
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.UD_MyAudiotronsInTabsActivity"
+            android:label="@string/title_activity_ud__my_audiotrons_in_tabs" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.UD_MyAudiotrons_SDcardActivity"
+            android:label="@string/title_activity_ud__my_audiotrons__sdcard" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.AudiotronsInCategoryTab"
+            android:label="@string/title_activity_audiotrons_in_category_tab" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.NewAudiotronsInCategoryDisplay"
+            android:label="@string/title_activity_new_audiotrons_in_category_display" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.Empty"
+            android:label="@string/title_activity_empty" >
+        </activity>
+
+        <!-- SEARCH ACTIVITY -->
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.SearchActivity"
+            android:label="@string/title_activity_search" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.HelpActivity"
+            android:label="@string/title_activity_help"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.VR_HelpActivity"
+            android:label="@string/title_activity_vr__help" 
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.ACT_HelpActivity"
+            android:label="@string/title_activity_act__help" 
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.UD_Profile_HelpActivity"
+            android:label="@string/title_activity_ud__profile__help" 
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+        <activity
+            android:name="com.sjsu.cmpe295B.idiscoverit.main.MyAudiotrons_SDcard_HelpActivity"
+            android:label="@string/title_activity_my_audiotrons__sdcard__help" 
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+    </application>
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" >
+    </uses-sdk>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+
+</manifest>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:id="@+id/home_relativelayout_gridview">
+    <com.sjsu.cmpe295B.idiscoverit.utilities.CustomTblLayout 
+        android:id="@+id/customId" 
+        android:layout_height="80dp" 
+        android:layout_width="fill_parent" 
+        android:padding="10dp" 
+        android:text="" 
+        android:textColor="@color/textcolor">
+ 	</com.sjsu.cmpe295B.idiscoverit.utilities.CustomTblLayout>  
+  	<!-- <com.sjsu.cmpe295B.idiscoverit.utilities.CustomTblLayout
+     android:id="@+id/customId2" 
+     android:layout_height="fill_parent" 
+     android:layout_width="60dp"
+     android:padding="10dp" 
+     android:text="" 
+     android:textColor="@color/textcolor">
+     </com.sjsu.cmpe295B.idiscoverit.utilities.CustomTblLayout> -->
+	
+  	<ImageView 
+	    android:layout_height="44dp"
+	    android:id="@+id/home_grid_imgview"
+	    android:layout_width="44dp"
+	    android:src="@drawable/audio_icon"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerHorizontal="true"
+	    android:contentDescription="@string/audio_images"
+	    android:layout_marginLeft="2dp"
+	    android:layout_marginRight="2dp"
+	    />
+		
+	<TextView
+	    android:id="@+id/home_textview_gridview"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/home_grid_imgview"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="2dp"
+	    android:ellipsize="marquee"
+	    android:lines="2"
+	    android:text="@string/TextView"
+	    android:textColor="@color/textcolor"
+	    android:textSize="13sp" />
+	<RatingBar
+	    android:id="@+id/home_rating_bar"
+	    style="?android:attr/ratingBarStyleSmall"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/home_textview_gridview"
+	    android:layout_centerHorizontal="true"
+	    android:numStars="5" />
+
+ </RelativeLayout>

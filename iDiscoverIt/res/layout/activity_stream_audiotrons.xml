@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10px" >
+
+    <TextView
+        android:id="@+id/text_kb_streamed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stream"
+        android:textStyle="bold" />
+    
+   <!--  <SeekBar 
+        android:id="@+id/seekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_alignParentLeft="true" /> -->
+
+     <Button
+        android:id="@+id/btnStream"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/seekBar"
+        android:layout_below="@+id/seekBar"
+        android:layout_marginTop="56dp"
+        android:text="Start Streaming" /> 
+
+    <!-- <ImageButton
+        android:id="@+id/btnPlay"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnStream"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/img_btn_play" />
+
+    <ImageButton
+        android:id="@+id/btnPause"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnPlay"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/img_btn_pause" />
+ -->
+</RelativeLayout>

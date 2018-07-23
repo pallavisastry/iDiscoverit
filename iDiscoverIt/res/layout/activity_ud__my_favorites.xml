@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UD_MyFavoritesActivity" >
+
+   <ListView
+        android:id="@+id/my_favorite_audiotrons_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+     
+    <TextView  
+        android:id="@+id/my_favorite_audiotron_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dip"
+        android:layout_marginTop="29dip"
+        android:gravity="left"
+        android:textColor="#04b3d2"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+</RelativeLayout>

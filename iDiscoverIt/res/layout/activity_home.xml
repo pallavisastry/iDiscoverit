@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+ 
+    <TextView
+        android:id="@+id/title_fame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:lines="1"
+        android:text="@string/hall_of_fame"
+        android:textSize="20sp"
+        android:textStyle="bold" 
+        android:gravity="center_horizontal"
+        android:textColor="#04b3d2"/>
+    <LinearLayout
+        android:id="@+id/linear_gridview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="39dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+       
+        <GridView
+            android:id="@+id/home_grid_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_fame"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="55dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="25dp"
+            android:columnWidth="90dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true"
+            android:stretchMode="columnWidth"
+            android:textColor="#04b3d2"
+            android:verticalSpacing="10dp" 
+            android:layout_above="@+id/action_bar_relative_voiceRecord">
+
+        </GridView>
+    </LinearLayout>
+         
+    <LinearLayout
+        android:id="@+id/action_bar_relative_voiceRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="39dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+         
+        <ImageButton 
+            android:id="@+id/home"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="@string/home"
+        	android:src="@drawable/home"/>
+        
+        <ImageButton
+            android:id="@+id/recorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/recorder"
+            android:src="@drawable/audio_recorder_btn"/>
+
+        <ImageButton
+            android:id="@+id/categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/categories"
+            android:src="@drawable/audio_icon"/>
+
+        <ImageButton
+            android:id="@+id/my_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/profile"
+            android:src="@drawable/profile"
+            android:text="@string/me"/>
+ 	
+    </LinearLayout>
+</RelativeLayout>

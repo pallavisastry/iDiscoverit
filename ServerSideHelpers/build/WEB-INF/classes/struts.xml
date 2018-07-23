@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    
+    <constant
+        name="struts.multipart.maxSize"
+        value="10000000" >
+    </constant>
+
+    <package
+        name="main"
+        extends="struts-default,json-default" >
+		        
+        <interceptors> 
+            <interceptor name="hibernateSessionInterceptor" class="com.sjsu.cmpe295B.idiscoverit.interceptors.HibernateInterceptor"/>
+		</interceptors>
+		
+        <action name="searchAction"
+            class="com.sjsu.cmpe295B.idiscoverit.main.SearchAction">
+            <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+        </action>
+		
+        <action name="newAudiotronsInCategoryDisplayActivity"
+            class="com.sjsu.cmpe295B.idiscoverit.main.NewAudiotronsInCategoryDisplayAction">
+            <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+        </action>
+        
+        <action name="addTagAction"
+		    class="com.sjsu.cmpe295B.idiscoverit.main.TagAudiotronAction">
+            <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+        
+		<action name="myFavoritesListAction"
+		    class="com.sjsu.cmpe295B.idiscoverit.main.MyFavoritesListAction">
+            <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="addToFavoritesAction"
+		    class="com.sjsu.cmpe295B.idiscoverit.main.FavoritesAction">
+            <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="myAudiotronsAction"
+		    class="com.sjsu.cmpe295B.idiscoverit.main.MyAudiotronsAction">
+            <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="feedbackAction"
+		    class="com.sjsu.cmpe295B.idiscoverit.main.FeedbackAction">
+		    <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+	<!-- <action name="renderAudiotronsAction"
+            class="com.sjsu.cmpe295B.idiscoverit.main.RenderAudiotronsAction">
+            <result type="json" />
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+        </action>  -->
+        
+		<action name="renderAudiotronsAction"
+            class="com.sjsu.cmpe295B.idiscoverit.main.RenderAudiotronsAction">
+            <result type="stream">
+                <param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+			</result>
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+        </action> 
+        
+		<action name="audiotronsInCategoryDisplayAction"
+		    class="com.sjsu.cmpe295B.idiscoverit.main.AudiotronsInCategoryDisplayAction">
+		    <result type="json">
+		        <param name="ERROR">/error.jsp</param> 
+		     </result> 
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="categoryListDisplayAction"
+		    class="com.sjsu.cmpe295B.idiscoverit.main.CategoryListDisplayAction">
+		    <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action
+            name="audiotronSaveAction"
+            class="com.sjsu.cmpe295B.idiscoverit.main.AudiotronSaveAction" >
+            <result type="json"> 
+            <param name="excludeNullProperties">true</param>    
+            </result>
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="fileUpload" >
+                <param name="maxSize" >
+					10000000
+                </param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+        </action>
+        
+		<action name="hallOfFameAction"
+		    class = "com.sjsu.cmpe295B.idiscoverit.main.HallOfFameAction">
+		    <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="deviceLoginAction"
+		    class = "com.sjsu.cmpe295B.idiscoverit.main.DeviceLoginAction">
+		    <result type="json" />
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		
+		<!-- *******Below actions are for web application********* -->
+		
+		<action name="index" class="com.sjsu.cmpe295B.idiscoverit.main.IndexAction">
+		    <result name="success">/index.jsp</result>
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="weblogin" class="com.sjsu.cmpe295B.idiscoverit.main.LoginAction">
+		    <result name="success">/userHomePage.jsp</result>
+		    <result name="error">/weblogin.jsp</result>
+		    
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="webregister" class="com.sjsu.cmpe295B.idiscoverit.main.RegistrationAction">
+		    <result name="success">/registrationSuccess.jsp</result>
+		    <result name="error">/registration.jsp</result>
+		    
+		    <interceptor-ref name="logger" />
+		    <interceptor-ref name="hibernateSessionInterceptor"/>
+		    <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<!-- Actions for web application Added by Anu --> 
+         <action name="listAudiotronsRecorded" class="com.sjsu.cmpe295B.idiscoverit.main.WebUserTrackAction">
+            <result name="success">/listAudiotronsRecorded.jsp</result>
+            <result name="error">/listAudiotronsRecorded.jsp</result>
+            
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+        </action>
+        
+        <action name="deleteAudiotronsRecorded" class="com.sjsu.cmpe295B.idiscoverit.main.WebUserTrackAction" method="deleteAudiotron">
+             <result name="success">/listAudiotronsRecorded.jsp</result>
+            <result name="error">/listAudiotronsRecorded.jsp</result>
+            
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+        </action>
+        
+        <action name="editAudiotronName" class="com.sjsu.cmpe295B.idiscoverit.main.WebUserTrackAction" method="edit">
+             <result name="success">/listAudiotronsRecorded.jsp</result>
+            <result name="error">/listAudiotronsRecorded.jsp</result>
+            
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+        </action>
+        
+        <action name="listAudiotronsRated" class="com.sjsu.cmpe295B.idiscoverit.main.WebUserTrackAction">
+            <result name="success">/listAudiotronsRecorded.jsp</result>
+            <result name="error">/listAudiotronsRecorded.jsp</result>
+            
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+        </action>
+        
+        <action name="listAudiotronsFavorited" class="com.sjsu.cmpe295B.idiscoverit.main.WebUserTrackAction">
+            <result name="success">/listAudiotronsRecorded.jsp</result>
+            <result name="error">/listAudiotronsRecorded.jsp</result>
+            
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+        </action>
+        
+        <action name="unmarkAudiotronAsFavorite" class="com.sjsu.cmpe295B.idiscoverit.main.WebUserTrackAction" method="deleteAfavoriteAudiotron">
+             <result name="success">/listAudiotronsRecorded.jsp</result>
+            <result name="error">/listAudiotronsRecorded.jsp</result>
+            
+            <interceptor-ref name="logger" />
+            <interceptor-ref name="hibernateSessionInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+        </action>
+		
+    </package>
+</struts>
